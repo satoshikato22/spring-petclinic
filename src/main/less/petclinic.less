@@ -11,28 +11,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+//コンテンツ部分の内容
 @icon-font-path:    "../../webjars/bootstrap/fonts/";
-
+//値を変数に格納
 @spring-green:      #6db33f;//明るい緑
 @spring-dark-green: #5fa134;//濃い緑
 @spring-brown:      #34302D;//明るい黒
 @spring-grey:       #838789;//灰色
-@spring-light-grey: #f9f8f4;//薄い腹色Homeページの背景色
+@spring-light-grey: #f9f8f4;//薄い肌色Homeページの背景色 #f1f1f1
+//bodyの背景色
+@body-bg:                           @spring-light-grey;//使われていないみたい
+@text-color:                        @spring-brown;//.help-blockでのみ使用
+//リンクの文字色を緑にする http://localhost:8080/owners?lastName= とか
+@link-color:                        @spring-dark-green;//使われていない
+//リンクにカーソルが置かれたときの色？
+@link-hover-color:                  @spring-dark-green;//使われていない
 
-@body-bg:                           @spring-light-grey;
-@text-color:                        @spring-brown;
-@link-color:                        @spring-dark-green;
-@link-hover-color:                  @spring-dark-green;
-
-//menu関連
-@navbar-default-link-color:         #838789;//メニューの文字色HOMEとか
-@navbar-default-link-active-color:  @spring-light-grey;
+//menu関連?
+//メニューバーのアイコン文字色(カーソル乗ってないとき)
+@navbar-default-link-color:         #6db33f;//#838789;//メニューの文字色HOMEとか@spring-light-grey
+//メニューバーのアイコン文字色(クリックされたときactiveなとき)
+@navbar-default-link-active-color:  #34302D;//@spring-light-grey;
+//メニューバーのアイコン文字色(カーソルが乗っているとき)
 @navbar-default-link-hover-color:   @spring-light-grey;
+//不明
 @navbar-default-link-hover-bg:      @spring-green;
+//おそらくメニューアイコン画像関連
+//1個ずつしらべるべき
 @navbar-default-toggle-icon-bar-bg: @spring-light-grey;
 @navbar-default-toggle-hover-bg:    transparent;
+//hover時の色を緑にしている文字の周囲
 @navbar-default-link-active-bg:     @spring-green;
 
+//不明
 @border-radius-base:             0;
 @border-radius-large:            0;
 @border-radius-small:            0;
@@ -41,6 +52,7 @@
 @btn-default-bg:                 @spring-brown;
 @btn-default-border:             @spring-green;
 
+//不明
 @nav-tabs-active-link-hover-color:        @spring-light-grey;
 @nav-tabs-active-link-hover-bg:           @spring-brown;
 @nav-tabs-active-link-hover-border-color: @spring-brown;
@@ -50,20 +62,25 @@
 @pagination-active-border:                @spring-green;
 @table-border-color:                      @spring-brown;
 
+//tableのheaderの背景
+//http://localhost:8080/vets.html
+//http://localhost:8080/owners?lastName=
 .table > thead > tr > th {
   background-color: lighten(@spring-brown, 3%);
   color: @spring-light-grey;
 }
-
+//不明
 .table-filter {
   background-color: @spring-brown;
   padding: 9px 12px;
 }
 
+//不明
 .nav > li > a {
   color: @spring-grey;
 }
 
+//不明
 .btn-default {
   border-width: 2px;
   transition: border 0.15s;
@@ -82,7 +99,6 @@
   }
 }
 
-
 .container .text-muted {
   margin: 20px 0;
 }
@@ -90,7 +106,7 @@
 code {
   font-size: 80%;
 }
-
+//コンテンツ部分のmarginやpadding
 .xd-container {
   margin-top: 40px;
   margin-bottom: 100px;
@@ -154,8 +170,9 @@ table td.action-column {
   width: 1px;
 }
 
+//フォーム部品に使っているclass指定はclass="help〇〇"のようだ
 .help-block {
-  color: lighten(@text-color, 50%); // lighten the text some for contrast
+  color: lighten(@text-color, 50%); // コントラスト(対比)のためにテキストを若干明るくします
 }
 
 .xd-containers {
@@ -164,10 +181,6 @@ table td.action-column {
 
 .cluster-view > table td {
   vertical-align: top;
-}
-
-.cluster-view .label, .cluster-view .column-block {
-  display: block;
 }
 
 .cluster-view .input-group-addon {
@@ -196,6 +209,8 @@ table td.action-column {
 .deployment-status-na {
 }
 
+
+
 .container-details-table th {
   background-color: lighten(@spring-brown, 3%);
   color: @spring-light-grey;
@@ -218,6 +233,8 @@ table td.action-column {
   .alert-variant(fade(@alert-danger-bg, 70%); @alert-danger-border; @alert-danger-text);
 }
 
+
+
 .myspinner {
   animation-name: spinner;
   animation-duration: 2s;
@@ -234,7 +251,9 @@ table td.action-column {
 hr {
   border-top: 1px dotted @spring-brown;
 }
-
+//フォント関連
 @import "typography.less";
+//header関連のcss
 @import "header.less";
+//不明
 @import "responsive.less";
